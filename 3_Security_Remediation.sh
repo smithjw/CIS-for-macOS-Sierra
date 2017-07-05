@@ -37,7 +37,7 @@
 # For "true" items, runs query for current computer/user compliance.
 # Non-compliant items are logged to /Library/Application Support/SecurityScoring/org_audit
 
-plistlocation="/Library/Application Support/SecurityScoring/org_security_score.plist"
+plistlocation="/Library/Application Support/CAmperIT/SecurityScoring/org_security_score.plist"
 currentUser=$( ls -l /dev/console | cut -d " " -f4 )
 hardwareUUID=$(/usr/sbin/system_profiler SPHardwareDataType | grep "Hardware UUID" | awk -F ": " '{print $2}' | xargs)
 
@@ -86,7 +86,7 @@ if [ "$automaticAppUpdates" = "1" ]; then
 fi
 fi
 
-# 1.4 Enable system data files and security update installs 
+# 1.4 Enable system data files and security update installs
 # Verify organizational score
 Audit1_4="$(defaults read "$plistlocation" OrgScore1_4)"
 # If organizational score is 1 or true, check status of client
@@ -100,7 +100,7 @@ if [ "$criticalUpdates" = "1" ]; then
 fi
 fi
 
-# 1.5 Enable OS X update installs 
+# 1.5 Enable OS X update installs
 # Verify organizational score
 Audit1_5="$(defaults read "$plistlocation" OrgScore1_5)"
 # If organizational score is 1 or true, check status of client
@@ -168,7 +168,7 @@ if [ "$Audit2_2_3" = "1" ]; then
 	fi
 fi
 
-# 2.3.1 Set an inactivity interval of 20 minutes or less for the screen saver 
+# 2.3.1 Set an inactivity interval of 20 minutes or less for the screen saver
 # Verify organizational score
 Audit2_3_1="$(defaults read "$plistlocation" OrgScore2_3_1)"
 # If organizational score is 1 or true, check status of client
@@ -181,7 +181,7 @@ if [ "$Audit2_3_1" = "1" ]; then
 	fi
 fi
 
-# 2.3.2 Secure screen saver corners 
+# 2.3.2 Secure screen saver corners
 # Verify organizational score
 Audit2_3_2="$(defaults read "$plistlocation" OrgScore2_3_2)"
 # If organizational score is 1 or true, check status of client
@@ -213,7 +213,7 @@ if [ "$Audit2_3_2" = "1" ]; then
 fi
 
 
-# 2.3.4 Set a screen corner to Start Screen Saver 
+# 2.3.4 Set a screen corner to Start Screen Saver
 # Verify organizational score
 Audit2_3_4="$(defaults read "$plistlocation" OrgScore2_3_4)"
 # If organizational score is 1 or true, check status of client
@@ -229,7 +229,7 @@ if [ "$bl_corner" = "5" ] || [ "$tl_corner" = "5" ] || [ "$tr_corner" = "5" ] ||
 fi
 fi
 
-# 2.4.1 Disable Remote Apple Events 
+# 2.4.1 Disable Remote Apple Events
 # Verify organizational score
 Audit2_4_1="$(defaults read "$plistlocation" OrgScore2_4_1)"
 # If organizational score is 1 or true, check status of client
@@ -242,7 +242,7 @@ if [ "$remoteAppleEvents" = "Off" ]; then
 fi
 fi
 
-# 2.4.2 Disable Internet Sharing 
+# 2.4.2 Disable Internet Sharing
 # Verify organizational score
 Audit2_4_2="$(defaults read "$plistlocation" OrgScore2_4_2)"
 # If organizational score is 1 or true, check status of client
@@ -262,7 +262,7 @@ if [ "$natAirport" = "0" ] && [ "$natEnabled" = "0" ] && [ "$natPrimary" = "0" ]
 fi
 fi
 
-# 2.4.3 Disable Screen Sharing 
+# 2.4.3 Disable Screen Sharing
 # Verify organizational score
 Audit2_4_3="$(defaults read "$plistlocation" OrgScore2_4_3)"
 # If organizational score is 1 or true, check status of client
@@ -275,7 +275,7 @@ if [ "$screenSharing" = "1" ]; then
 fi
 fi
 
-# 2.4.5 Disable Remote Login 
+# 2.4.5 Disable Remote Login
 # Verify organizational score
 Audit2_4_5="$(defaults read "$plistlocation" OrgScore2_4_5)"
 # If organizational score is 1 or true, check status of client
@@ -288,7 +288,7 @@ if [ "$remoteLogin" = "Off" ]; then
 fi
 fi
 
-# 2.4.6 Disable DVD or CD Sharing 
+# 2.4.6 Disable DVD or CD Sharing
 # Verify organizational score
 Audit2_4_6="$(defaults read "$plistlocation" OrgScore2_4_6)"
 # If organizational score is 1 or true, check status of client
@@ -356,7 +356,7 @@ if [ "$wompEnabled" = "0" ]; then
 fi
 fi
 
-# 2.5.2 Disable sleeping the computer when connected to power 
+# 2.5.2 Disable sleeping the computer when connected to power
 # Verify organizational score
 Audit2_5_2="$(defaults read "$plistlocation" OrgScore2_5_2)"
 # If organizational score is 1 or true, check status of client
@@ -370,7 +370,7 @@ if [ "$disksleepEnabled" = "0" ]; then
 fi
 fi
 
-# 2.6.2 Enable Gatekeeper 
+# 2.6.2 Enable Gatekeeper
 # Verify organizational score
 Audit2_6_2="$(defaults read "$plistlocation" OrgScore2_6_2)"
 # If organizational score is 1 or true, check status of client
@@ -383,7 +383,7 @@ if [ "$Audit2_6_2" = "1" ]; then
 	fi
 fi
 
-# 2.6.3 Enable Firewall 
+# 2.6.3 Enable Firewall
 # Verify organizational score
 Audit2_6_3="$(defaults read "$plistlocation" OrgScore2_6_3)"
 # If organizational score is 1 or true, check status of client
@@ -396,7 +396,7 @@ if [ "$firewallEnabled" = "0" ]; then
 fi
 fi
 
-# 2.6.4 Enable Firewall Stealth Mode 
+# 2.6.4 Enable Firewall Stealth Mode
 # Verify organizational score
 Audit2_6_4="$(defaults read "$plistlocation" OrgScore2_6_4)"
 # If organizational score is 1 or true, check status of client
@@ -448,7 +448,7 @@ fi
 fi
 
 
-# 2.10 Enable Secure Keyboard Entry in terminal.app 
+# 2.10 Enable Secure Keyboard Entry in terminal.app
 # Verify organizational score
 Audit2_10="$(defaults read "$plistlocation" OrgScore2_10)"
 # If organizational score is 1 or true, check status of client
@@ -461,7 +461,7 @@ if [ "$secureKeyboard" = "1" ]; then
 fi
 fi
 
-# 3.1.1 Retain system.log for 90 or more days 
+# 3.1.1 Retain system.log for 90 or more days
 # Verify organizational score
 Audit3_1_1="$(defaults read "$plistlocation" OrgScore3_1_1)"
 # If organizational score is 1 or true, check status of client
@@ -487,7 +487,7 @@ fi
 
 
 
-# 3.1.2 Retain appfirewall.log for 90 or more days 
+# 3.1.2 Retain appfirewall.log for 90 or more days
 # Verify organizational score
 Audit3_1_2="$(defaults read "$plistlocation" OrgScore3_1_2)"
 # If organizational score is 1 or true, check status of client
@@ -563,7 +563,7 @@ if [ "$Audit3_3" = "1" ]; then
 	fi
 fi
 
-# 3.5 Retain install.log for 365 or more days 
+# 3.5 Retain install.log for 365 or more days
 # Verify organizational score
 Audit3_5="$(defaults read "$plistlocation" OrgScore3_5)"
 # If organizational score is 1 or true, check status of client
@@ -588,7 +588,7 @@ installRetention=$(grep -i ttl /etc/asl/com.apple.install | awk -F'ttl=' '{print
 fi
 
 
-# 4.1 Disable Bonjour advertising service 
+# 4.1 Disable Bonjour advertising service
 # Verify organizational score
 Audit4_1="$(defaults read "$plistlocation" OrgScore4_1)"
 # If organizational score is 1 or true, check status of client
@@ -601,7 +601,7 @@ if [ "$bonjourAdvertise" = "0" ]; then
 fi
 fi
 
-# 4.2 Enable "Show Wi-Fi status in menu bar" 
+# 4.2 Enable "Show Wi-Fi status in menu bar"
 # Verify organizational score
 Audit4_2="$(defaults read "$plistlocation" OrgScore4_2)"
 # If organizational score is 1 or true, check status of client
@@ -614,7 +614,7 @@ if [ "$wifiMenuBar" = "0" ]; then
 fi
 fi
 
-# 4.4 Ensure http server is not running 
+# 4.4 Ensure http server is not running
 # Verify organizational score
 Audit4_4="$(defaults read "$plistlocation" OrgScore4_4)"
 # If organizational score is 1 or true, check status of client
@@ -627,7 +627,7 @@ if [ "$Audit4_4" = "1" ]; then
 	fi
 fi
 
-# 4.5 Ensure ftp server is not running 
+# 4.5 Ensure ftp server is not running
 # Verify organizational score
 Audit4_5="$(defaults read "$plistlocation" OrgScore4_5)"
 # If organizational score is 1 or true, check status of client
